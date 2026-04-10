@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Syne:wght@700;800&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg-deep:      #060b14;
+  --bg-dark:      #0a1120;
+  --bg-card:      #0f1929;
+  --bg-card2:     #131f30;
+  --bg-hover:     #1a2840;
+  --border:       #1e3050;
+  --border-light: #263d5f;
+  --accent:       #00d4ff;
+  --accent-glow:  rgba(0,212,255,0.15);
+  --accent2:      #7c3aed;
+  --accent3:      #10b981;
+  --solar:        #f59e0b;
+  --solar-glow:   rgba(245,158,11,0.2);
+  --wind:         #38bdf8;
+  --wind-glow:    rgba(56,189,248,0.2);
+  --hydro:        #3b82f6;
+  --hydro-glow:   rgba(59,130,246,0.2);
+  --biomasse:     #22c55e;
+  --biomasse-glow:rgba(34,197,94,0.2);
+  --text-primary:  #e8f4ff;
+  --text-secondary:#8ba3c0;
+  --text-muted:    #4a6380;
+  --radius-sm:  6px;
+  --radius-md:  12px;
+  --radius-lg:  20px;
+  --radius-xl:  28px;
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.4);
+  --shadow-glow: 0 0 40px rgba(0,212,255,0.08);
+  font-size: 14px;
+}
+
+html { height: 100%; background: var(--bg-deep); }
+body {
+  height: 100%;
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: 'Space Grotesk', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+  overflow: hidden;
+}
+#root { height: 100%; display: flex; flex-direction: column; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes pulse-ring {
+  0%   { transform: scale(1);    opacity: 0.6; }
+  100% { transform: scale(1.6);  opacity: 0; }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes barGrow { from { width: 0; } }
+@keyframes countUp { from { opacity: 0; } to { opacity: 1; } }
+@keyframes floatUp {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+.fade-in    { animation: fadeIn 0.4s ease forwards; }
+.slide-left { animation: slideLeft 0.35s ease forwards; }

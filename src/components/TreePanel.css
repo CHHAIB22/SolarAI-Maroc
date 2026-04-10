@@ -1,0 +1,157 @@
+.tree-panel {
+  display: flex;
+  flex-direction: column;
+  ;
+  background: var(--bg-deep);
+  overflow: hidden;
+}
+
+/* Header */
+.tree-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 14px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.tree-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 3px;
+}
+.tree-sub { font-size: 11px; color: var(--text-secondary); }
+.tree-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+
+.tree-btn {
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-family: 'Space Grotesk', sans-serif;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.tree-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
+
+.tree-prediction-badge {
+  padding: 5px 12px;
+  border: 1px solid;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Body */
+.tree-body {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+/* SVG canvas */
+.tree-svg-wrap {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  background: radial-gradient(ellipse at 30% 40%, rgba(0,212,255,0.03) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 70%, rgba(124,58,237,0.03) 0%, transparent 60%),
+              var(--bg-deep);
+}
+.tree-svg-wrap svg { display: block; will-change: transform; }
+
+/* Grid dot pattern */
+.tree-svg-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, #1e3050 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* Detail panel */
+.tree-detail {
+  width: 240px;
+  background: var(--bg-card);
+  border-left: 1px solid var(--border);
+  border-top: 3px solid var(--det-color, var(--accent));
+  padding: 16px;
+  flex-shrink: 0;
+  overflow-y: auto;
+  animation: slideLeft 0.2s ease;
+  position: relative;
+}
+.tree-detail-close {
+  position: absolute;
+  top: 10px; right: 10px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: color 0.15s;
+}
+.tree-detail-close:hover { color: var(--text-primary); }
+.tree-detail-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--det-color, var(--accent));
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-right: 20px;
+}
+.tree-detail-grid { display: flex; flex-direction: column; gap: 8px; }
+.det-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 10px;
+  background: var(--bg-card2);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+.det-row span:first-child { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.det-row span:last-child  { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-secondary); font-weight: 600; }
+
+/* Footer */
+.tree-footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px 20px;
+  border-top: 1px solid var(--border);
+  background: var(--bg-dark);
+  flex-shrink: 0;
+}
+.tree-stat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--bg-card2);
+}
+.tree-stat.highlight {
+  border-color: var(--det-color, var(--accent));
+  background: color-mix(in srgb, var(--det-color, var(--accent)) 10%, transparent);
+}
+.stat-label { font-size: 10px; color: var(--text-muted); }
+.stat-val   { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-secondary); font-weight: 600; }
+.stat-val.accent { color: var(--accent); }

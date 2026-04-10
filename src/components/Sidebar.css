@@ -1,0 +1,134 @@
+.sidebar {
+  width: 200px;
+  background: var(--bg-dark);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar-glow {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(0,212,255,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.sidebar-nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 10px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+.nav-item:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+  border-color: var(--border);
+}
+.nav-item.active {
+  background: var(--accent-glow);
+  color: var(--accent);
+  border-color: rgba(0,212,255,0.2);
+}
+
+.nav-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.nav-label {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+}
+.nav-sublabel {
+  font-size: 10px;
+  opacity: 0.6;
+}
+
+.nav-active-bar {
+  position: absolute;
+  right: -1px; top: 20%; bottom: 20%;
+  width: 2px;
+  background: var(--accent);
+  border-radius: 2px 0 0 2px;
+}
+
+/* Footer */
+.sidebar-footer {
+  padding: 16px 14px 4px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.db-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  background: rgba(34,197,94,0.08);
+  border: 1px solid rgba(34,197,94,0.15);
+  border-radius: var(--radius-sm);
+}
+.db-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--biomasse);
+  box-shadow: 0 0 6px var(--biomasse);
+  animation: pulse-ring 2s infinite;
+  flex-shrink: 0;
+}
+.db-label {
+  font-size: 10px;
+  color: var(--biomasse);
+  font-weight: 500;
+}
+
+.model-badge {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.model-label {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+.model-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
