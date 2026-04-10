@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/SolarAI-Maroc/static/css/main.5c6c0bbe.css",
+    "main.js": "/SolarAI-Maroc/static/js/main.808cce04.js",
+    "index.html": "/SolarAI-Maroc/index.html",
+    "main.5c6c0bbe.css.map": "/SolarAI-Maroc/static/css/main.5c6c0bbe.css.map",
+    "main.808cce04.js.map": "/SolarAI-Maroc/static/js/main.808cce04.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5c6c0bbe.css",
+    "static/js/main.808cce04.js"
+  ]
+}
