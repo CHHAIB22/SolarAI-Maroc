@@ -9,6 +9,7 @@
 ![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
 
 **Application desktop intelligente pour la classification et le dimensionnement des énergies renouvelables au Maroc**
+**🌐 Version Web :** https://chhaib22.github.io/energie-renouvelable-ia/
 
 *Projet de Fin d'Études — DUT Énergies Renouvelables et Efficacité Énergétique*  
 *École Supérieure de Technologie de Guelmim — 2025/2026*
